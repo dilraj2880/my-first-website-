@@ -30,3 +30,88 @@ textarea{min-height:100px;resize:vertical}
   .hero .container{flex-direction:column}
   .cards{flex-direction:column}
 }
+/* HERO SECTION IMPROVEMENTS */
+.hero {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.hero-left h1 {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.hero-left .lead {
+  font-size: 16px;
+  margin: 10px 0 20px;
+}
+
+#hero-img {
+  width: 100%;
+  border-radius: 12px;
+  margin-top: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+
+/* BUTTON STYLE */
+.btn {
+  display: inline-block;
+  background: #0b63f6;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  background: #004fcc;
+}
+
+
+/* SERVICES SECTION */
+.cards {
+  display: grid;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.card {
+  background: white;
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.card h3 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+
+/* CONTACT FORM */
+#contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+#contactForm input,
+#contactForm textarea {
+  padding: 12px;
+  border: 1px solid #dcdcdc;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+
+/* FOOTER */
+.footer {
+  margin-top: 40px;
+  text-align: center;
+  padding: 20px 0;
+  color: #777;
+}
