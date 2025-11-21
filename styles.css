@@ -171,3 +171,14 @@ footer {
   opacity: 1;
   transform: translateY(0);
 }
+/* ICON ANIMATION */
+.service-icon {
+  transform: scale(0.8);
+  opacity: 0;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.show-icon {
+  transform: scale(1);
+  opacity: 1;
+}
