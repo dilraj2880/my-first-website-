@@ -1,140 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dilraj — Web Developer</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dilraj — Fast & Clean Websites</title>
 
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="styles.css">
+  <!-- Link to CSS -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
+  <!-- NAVBAR -->
+  <header class="site-header">
+    <div class="container nav-inner">
+      <div class="brand">Dilraj</div>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+      </nav>
 
-    <!-- NAV -->
-    <nav>
-        <div class="container nav-inner">
-            <a class="brand" href="#">Dilraj</a>
+      <!-- Dark mode toggle -->
+      <button id="themeToggle" class="btn small" aria-pressed="false" title="Toggle dark mode">🌙</button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main>
+    <section class="hero reveal">
+      <div class="container hero-inner">
+        <div class="hero-left">
+          <h1 class="hero-title">Dilraj — Fast &amp; Clean Websites</h1>
+          <p class="lead">I build responsive landing pages and fix website issues quickly. Ready to deploy.</p>
+          <a href="#contact" class="btn primary">Get Started</a>
         </div>
-    </nav>
 
-    <!-- HERO -->
-    <section class="hero fade-up">
-        <div class="container hero-container">
-            <div class="hero-left fade-up">
-                <h1>Dilraj — Fast & Clean Websites</h1>
-                <p class="lead">I build responsive landing pages and fix website issues quickly.</p>
-                <a href="#contact" class="btn">Get Started</a>
-            </div>
-
-            <div class="hero-right fade-up">
-                <img id="hero-img"
-                src="https://picsum.photos/700/450?random=5"
-                alt="hero image">
-            </div>
+        <div class="hero-right">
+          <img id="hero-img" alt="hero image" src="https://images.unsplash.com/photo-1508780709619-79562169bc64?w=1200&q=80&auto=format&fit=crop" />
         </div>
+      </div>
     </section>
 
     <!-- SERVICES -->
+    <section id="services" class="section container reveal">
+      <h2>Services</h2>
+      <div class="cards">
+        <article class="card">
+          <div class="icon">🖥️</div>
+          <h3>Landing Pages</h3>
+          <p>Fast, responsive and SEO-ready.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon">🔧</div>
+          <h3>Bug Fixing</h3>
+          <p>Fix layout, CSS, UI and responsive issues.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon">💼</div>
+          <h3>Custom Websites</h3>
+          <p>Perfect for portfolios and business owners.</p>
+        </article>
+      </div>
+    </section>
+
     <!-- PORTFOLIO -->
-<section id="portfolio" class="section">
-  <div class="container">
-    <h2>Portfolio</h2>
-    <p class="lead">Here are some sample projects I can build.</p>
+    <section id="portfolio" class="section container reveal">
+      <h2>Portfolio</h2>
+      <p class="lead">Here are some sample projects I can build.</p>
 
-    <div class="portfolio-grid">
-      
-      <div class="portfolio-card">
-        <img src="https://picsum.photos/400/250?random=1" alt="Project 1">
-        <h3>Business Landing Page</h3>
+      <div class="portfolio-grid">
+        <div class="portfolio-card">
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=80&auto=format&fit=crop" alt="Business landing page">
+          <h4>Business Landing Page</h4>
+        </div>
+        <div class="portfolio-card">
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&q=80&auto=format&fit=crop" alt="Gym website">
+          <h4>Gym Website</h4>
+        </div>
+        <div class="portfolio-card">
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=80&auto=format&fit=crop" alt="Restaurant website">
+          <h4>Restaurant Website</h4>
+        </div>
       </div>
+    </section>
 
-      <div class="portfolio-card">
-        <img src="https://picsum.photos/400/250?random=2" alt="Project 2">
-        <h3>Gym Website</h3>
-      </div>
+    <!-- CONTACT -->
+    <section id="contact" class="section container reveal">
+      <h2>Contact Me</h2>
 
-      <div class="portfolio-card">
-        <img src="https://picsum.photos/400/250?random=3" alt="Project 3">
-        <h3>Restaurant Website</h3>
-      </div>
+      <!-- Use your Formspree action (I kept your earlier one). Replace if different. -->
+      <form id="contactForm" action="https://formspree.io/f/xbjqzjrl" method="POST" class="contact-form" novalidate>
+        <input type="text" name="name" placeholder="Your name" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <textarea name="message" placeholder="Message" required></textarea>
+        <button type="submit" class="btn primary">Send</button>
+      </form>
 
+      <!-- status toast -->
+      <div id="formStatus" class="toast" role="status" aria-live="polite" hidden></div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 Dilraj — All rights reserved.</p>
     </div>
-  </div>
-</section>
-    <section id="services" class="section">
-        <div class="container">
-            <h2>Services</h2>
+  </footer>
 
-            <div class="cards">
+  <!-- WhatsApp floating (change number to your number; international format no +) -->
+  <a id="whatsappBtn" class="whatsapp" href="https://wa.me/91xxxxxxxxxx" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">💬</a>
 
-                <div class="card fade-up">
-                    <i class="fa-solid fa-laptop-code icon"></i>
-                    <h3>Landing Pages</h3>
-                    <p>Fast, responsive and SEO-ready.</p>
-                </div>
-
-                <div class="card fade-up">
-                    <i class="fa-solid fa-screwdriver-wrench icon"></i>
-                    <h3>Bug Fixing</h3>
-                    <p>Fix layout, CSS, UI, and responsive issues.</p>
-                </div>
-
-                <div class="card fade-up">
-                    <i class="fa-solid fa-code icon"></i>
-                    <h3>Custom Websites</h3>
-                    <p>Perfect for business & portfolio websites.</p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT FORM -->
-    <section id="contact" class="section">
-        <div class="container">
-            <h2>Contact Me</h2>
-
-            <form id="contactForm"
-                  action="https://formspree.io/f/xbjqzjr1"
-                  method="POST">
-                <input type="text" name="name" placeholder="Your name" required />
-                <input type="email" name="email" placeholder="Email" required />
-                <textarea name="message" placeholder="Message" required></textarea>
-                <button class="btn" type="submit">Send</button>
-            </form>
-
-            <p id="status"></p>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-        © 2025 Dilraj — All rights reserved.
-    </footer>
-
-    <!-- SMALL SCRIPT -->
-    <script>
-      window.addEventListener('load', () => {
-        document.body.classList.add('loaded');
-      });
-    </script>
-
+  <!-- Link to JS -->
+  <script src="script.js" defer></script>
 </body>
 </html>
-<a id="whatsappBtn" href="https://wa.me/919351996276?text=Hi%20Dilraj!%20I%20want%20a%20landing%20page." target="_blank" rel="noopener" aria-label="WhatsApp" title="Chat on WhatsApp"></a>
-<script>
-  // show only on small/medium screens if you prefer (optional)
-  (function(){
-    const btn = document.getElementById('whatsappBtn');
-    if(!btn) return;
-    // hide on very large screens if you want: uncomment below
-    // if(window.innerWidth > 1200) btn.style.display = 'none';
-    // you can also add small entrance
-    setTimeout(()=> btn.style.transform = 'translateY(0)', 300);
-  })();
-</script>
