@@ -141,3 +141,22 @@ footer {
 @keyframes fadeUp {
     to { opacity: 1; transform: translateY(0); }
 }
+/* HERO IMAGE FIX */
+.hero-right {
+  width: 100%;
+  max-width: 640px;
+}
+
+#hero-img {
+  width: 100%;
+  height: 260px;          /* mobile size */
+  object-fit: cover;      /* image perfect crop */
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(2,6,23,0.08);
+}
+
+@media(min-width:900px){
+  #hero-img {
+    height: 360px;        /* desktop size */
+  }
+}
