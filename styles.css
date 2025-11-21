@@ -120,3 +120,6 @@ textarea{min-height:100px;resize:vertical}
   transition: 0.2s;
   box-shadow: 0 4px 18px rgba(0,0,0,0.08);
 }
+.hero {
+  background: linear-gradient(135deg, #ffffff 0%, #eef3ff 100%);
+}
