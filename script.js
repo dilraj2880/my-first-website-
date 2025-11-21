@@ -30,3 +30,27 @@ form.addEventListener("submit", async (e) => {
     statusText.style.color = "red";
   }
 });
+// ===== reveal on scroll (robust) =====
+function revealOnScroll() {
+  const revealElems = document.querySelectorAll('.fade-up, .cards .card, .portfolio-item, #hero-img, .footer.fade-up');
+  revealElems.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < (window.innerHeight - 80)) {
+      el.classList.add('visible');
+    }
+  });
+}
+
+// initial show on load
+window.addEventListener('load', () => {
+  // small timeout so first paint occurs
+  setTimeout(() => {
+    revealOnScroll();
+  }, 120);
+  // ensure hero image visible quickly
+  document.querySelector('#hero-img')?.classList.add('visible');
+});
+
+// on scroll + resize
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('resize', revealOnScroll);
