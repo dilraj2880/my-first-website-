@@ -214,3 +214,39 @@ document.addEventListener('click', (e) => {
     });
   }
 })();
+// Portfolio lightbox
+document.addEventListener('DOMContentLoaded', function () {
+  const links = document.querySelectorAll('.portfolio-link');
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lbImg');
+  const lbCaption = document.getElementById('lbCaption');
+  const lbClose = document.getElementById('lbClose');
+
+  links.forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      const img = link.querySelector('img');
+      const src = img.getAttribute('src');
+      const alt = img.getAttribute('alt') || '';
+      lbImg.src = src;
+      lbImg.alt = alt;
+      lbCaption.textContent = alt;
+      lb.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  function closeLB() {
+    lb.setAttribute('aria-hidden', 'true');
+    lbImg.src = '';
+    document.body.style.overflow = '';
+  }
+
+  lbClose.addEventListener('click', closeLB);
+  lb.addEventListener('click', function (e) {
+    if (e.target === lb) closeLB();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeLB();
+  });
+});
