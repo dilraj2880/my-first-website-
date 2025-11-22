@@ -637,3 +637,38 @@ html { scroll-behavior: smooth; }
 
 /* make sure body doesn't jump when lightbox opens */
 body.lb-open { overflow: hidden; }
+/* HIRE / CTA styles */
+#hire { padding: 3rem 1rem; }
+#hire h2 { font-size: 2rem; margin-bottom: .25rem; }
+#hire .lead { color: var(--muted); margin-bottom: 1.25rem; }
+
+.pricing-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: 1fr;
+}
+@media(min-width: 720px) {
+  .pricing-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.price-card {
+  background: var(--card-bg, #fff);
+  border-radius: 16px;
+  padding: 1.25rem;
+  box-shadow: var(--card-shadow);
+  text-align: center;
+}
+.price-card h3 { margin: .25rem 0 .5rem; font-size: 1.1rem; }
+.price-card .price { font-weight: 700; font-size: 1.6rem; margin-bottom:.5rem; }
+.price-card p { color: var(--muted); margin-bottom: .75rem; }
+
+.hire-btn { width: 100%; }
+
+/* Modal */
+.modal { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; background: rgba(0,0,0,.35); z-index: 1000; padding: 1rem; }
+.modal[aria-hidden="false"] { display: flex; }
+.modal-panel { background: var(--bg); max-width: 540px; width: 100%; border-radius: 12px; padding: 1.25rem; box-shadow: var(--elevate); position: relative; }
+.modal-close { position: absolute; right: 10px; top: 8px; background: transparent; border: none; font-size: 1.6rem; cursor: pointer; }
+.form input, .form textarea { width: 100%; padding: .9rem; margin-bottom: .6rem; border-radius: 8px; border: 1px solid #e6e9ef; }
+.modal-actions { display:flex; gap:.5rem; justify-content:flex-end; margin-top:.5rem; }
+.sr-only { display:block; } /* small labels kept visible for mobile accessibility */
