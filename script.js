@@ -115,3 +115,23 @@ function onScrollActive(){
 }
 window.addEventListener('scroll', onScrollActive);
 document.addEventListener('DOMContentLoaded', onScrollActive);
+// STEP 4.1 — Close mobile menu on link click
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', () => {
+    const nav = document.getElementById('navLinks');
+    if (nav && nav.classList.contains('show')) {
+      nav.classList.remove('show');
+    }
+  });
+});
+// STEP 4.2 — Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+  const nav = document.getElementById('navLinks');
+  const toggle = document.getElementById('navToggle');
+  if (!nav || !toggle) return;
+
+  // if menu is open and click target is outside both nav panel and toggle button -> close
+  if (nav.classList.contains('show') && !nav.contains(e.target) && !toggle.contains(e.target)) {
+    nav.classList.remove('show');
+  }
+});
