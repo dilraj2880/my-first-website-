@@ -85,14 +85,16 @@
         </div>
 
         <div class="hero-right">
-          <picture>
-  <source srcset="hero.png" media="(min-width: 720px)">
-  <img id="hero-img"
-       src="hero.png"
-       alt="Modern desk workspace with laptop — web developer sample"
-       loading="lazy"
-       width="1200" height="700">
-          </picture>
+  <picture>
+    <source srcset="hero.webp" type="image/webp" media="(min-width: 720px)">
+    <source srcset="hero.png" type="image/png" media="(min-width: 720px)">
+    <img id="hero-img"
+         src="hero.webp"
+         alt="Modern desk workspace with laptop – web developer sample"
+         loading="lazy"
+         width="1200" height="700"
+         style="max-width:100%;height:auto;">
+  </picture>
         </div>
       </div>
     </section>
