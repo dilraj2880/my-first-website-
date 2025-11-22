@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Business Demo — Modern Landing</title>
+  <meta name="description" content="Modern business landing demo — clean, responsive and conversion focused." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="/">Dilraj — Web Dev</a>
+      <nav class="top-nav">
+        <a href="#work">Work</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-inner">
+        <div class="hero-text">
+          <h1>Modern websites for local businesses</h1>
+          <p>Clean, fast & mobile-first websites. Launch your online presence today.</p>
+          <div class="cta-row">
+            <a class="btn primary" href="https://wa.me/919351996276?text=Hi,%20I%20want%20a%20business%20website%20(Starter)" target="_blank">Start ₹999</a>
+            <a class="btn ghost" href="#contact">Get a demo</a>
+          </div>
+        </div>
+        <div class="hero-media">
+          <img src="https://raw.githubusercontent.com/dilraj2880/dilraj2880.github.io/main/portfolio1.png" alt="Business demo" />
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section">
+      <div class="wrap grid-3">
+        <article class="card">
+          <h3>Landing Page</h3>
+          <p>Single-page converting landing — lead forms and WhatsApp.</p>
+        </article>
+        <article class="card">
+          <h3>SEO Basics</h3>
+          <p>Fast loading, meta tags, mobile-first and basic SEO setup.</p>
+        </article>
+        <article class="card">
+          <h3>Contact + Booking</h3>
+          <p>Contact form + WhatsApp integration for instant leads.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="work" class="section">
+      <div class="wrap">
+        <h2>Sample Work</h2>
+        <div class="thumbs">
+          <img src="https://raw.githubusercontent.com/dilraj2880/dilraj2880.github.io/main/portfolio1.png" alt="work 1" />
+          <img src="https://raw.githubusercontent.com/dilraj2880/dilraj2880.github.io/main/portfolio2.png" alt="work 2" />
+          <img src="https://raw.githubusercontent.com/dilraj2880/dilraj2880.github.io/main/portfolio3.png" alt="work 3" />
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+      <div class="wrap">
+        <h2>Contact</h2>
+        <p>Want a custom website? Message me on WhatsApp or send a quick request.</p>
+
+        <div class="contact-row">
+          <a class="btn whatsapp" href="https://wa.me/919351996276?text=Hi,%20I%20want%20a%20business%20website" target="_blank">Message on WhatsApp</a>
+
+          <form class="contact-form" action="https://formspree.io/f/yourformid" method="POST">
+            <input name="name" placeholder="Your name" required />
+            <input name="email" placeholder="Email" type="email" required />
+            <input name="phone" placeholder="Phone" />
+            <textarea name="message" placeholder="Short brief"></textarea>
+            <button class="btn primary" type="submit">Send request</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">© <span id="year"></span> Dilraj — Websites from ₹999</div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
