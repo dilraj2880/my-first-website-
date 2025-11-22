@@ -385,3 +385,27 @@ document.addEventListener('DOMContentLoaded', function(){
     });
   }
 });
+// Hire Modal logic + WhatsApp
+const hireButtons = document.querySelectorAll(".hire-btn");
+const hireModal = document.getElementById("hireModal");
+const selectedPlan = document.getElementById("selectedPlan");
+const closeHire = document.getElementById("closeHire");
+const whatsappBtn = document.getElementById("whatsappBtn");
+
+const phone = "919351996276"; // your number
+
+hireButtons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    const plan = btn.getAttribute("data-plan");
+    selectedPlan.textContent = plan;
+
+    whatsappBtn.href =
+      `https://wa.me/${phone}?text=Hi,+I+want+to+hire+your+${plan}+website+plan`;
+
+    hireModal.setAttribute("aria-hidden", "false");
+  });
+});
+
+closeHire.addEventListener("click", () => {
+  hireModal.setAttribute("aria-hidden", "true");
+});
