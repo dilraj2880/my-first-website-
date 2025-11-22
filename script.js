@@ -409,3 +409,65 @@ hireButtons.forEach(btn => {
 closeHire.addEventListener("click", () => {
   hireModal.setAttribute("aria-hidden", "true");
 });
+// Hire CTA + Modal behavior
+document.addEventListener('DOMContentLoaded', () => {
+  // Find all hire buttons
+  const hireButtons = document.querySelectorAll('.hire-btn');
+  const hireModal = document.getElementById('hireModal') || document.querySelector('.modal#hireModal');
+  const closeHire = document.getElementById('closeHire') || hireModal && hireModal.querySelector('.modal-close');
+  const selectedPlanEl = document.getElementById('selectedPlan') || null;
+  const selectedPlanText = document.getElementById('selectedPlanText');
+  const whatsappBtn = document.getElementById('whatsappBtn');
+  const formPlanInput = document.querySelector('#hireForm input[name="plan"]');
+
+  // phone number to use for WhatsApp (replace with your number if different)
+  const whatsappNumber = '919351996276'; // keep as plain digits, country code +91
+
+  function openModalWithPlan(planName) {
+    if (!hireModal) return;
+    hireModal.classList.add('is-open');
+    hireModal.setAttribute('aria-hidden', 'false');
+    // show selected plan name
+    if (selectedPlanEl) selectedPlanEl.textContent = planName;
+    if (selectedPlanText) selectedPlanText.textContent = 'Selected plan: ' + planName;
+    // set hidden input in form (if present)
+    if (formPlanInput) formPlanInput.value = planName;
+    // set WhatsApp button link with prefilled message
+    if (whatsappBtn) {
+      const message = encodeURIComponent(`Hi! I'm interested in the ${planName} plan. Please help me get started. - (from portfolio site)`);
+      whatsappBtn.setAttribute('href', `https://wa.me/${whatsappNumber}?text=${message}`);
+    }
+    // focus the first input if you want:
+    const firstInput = hireModal.querySelector('input, textarea, button');
+    if (firstInput) firstInput.focus();
+  }
+
+  function closeHireModal() {
+    if (!hireModal) return;
+    hireModal.classList.remove('is-open');
+    hireModal.setAttribute('aria-hidden', 'true');
+  }
+
+  hireButtons.forEach(btn => {
+    // Make sure the button spans full width by applying class (defensive)
+    btn.classList.add('hire-btn');
+
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const plan = btn.dataset.plan || btn.getAttribute('data-plan') || btn.textContent.trim();
+      openModalWithPlan(plan);
+    });
+  });
+
+  // close handlers
+  if (closeHire) closeHire.addEventListener('click', closeHireModal);
+  // close when clicking outside modal-panel
+  if (hireModal) hireModal.addEventListener('click', (ev) => {
+    if (ev.target === hireModal) closeHireModal();
+  });
+
+  // optional: Escape key to close
+  document.addEventListener('keyup', (e) => {
+    if (e.key === 'Escape') closeHireModal();
+  });
+});
