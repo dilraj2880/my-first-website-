@@ -137,11 +137,15 @@
   </div>
 </section>
 
-<!-- Lightbox modal (place directly after this section or before </body>) -->
-<div id="lightbox" class="lightbox" aria-hidden="true" role="dialog">
-  <button id="lbClose" class="lb-close" aria-label="Close">✕</button>
-  <img id="lbImg" src="" alt="" />
-  <p id="lbCaption"></p>
+<!-- Lightbox modal (with prev/next) -->
+<div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Image preview">
+  <button id="lbPrev" class="lb-nav lb-prev" aria-label="Previous image">◀</button>
+  <div class="lb-inner" role="document">
+    <button id="lbClose" class="lb-close" aria-label="Close">✕</button>
+    <img id="lbImg" src="" alt="" />
+    <p id="lbCaption"></p>
+  </div>
+  <button id="lbNext" class="lb-nav lb-next" aria-label="Next image">▶</button>
 </div>
       
 
