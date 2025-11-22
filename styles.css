@@ -352,3 +352,63 @@ html { scroll-behavior: smooth; }
         font-size: 1.1rem;
     }
 }
+/* Portfolio grid + cards */
+.portfolio-grid {
+  display: grid;
+  gap: 1.6rem;
+  grid-template-columns: 1fr; /* mobile default: single column */
+  margin-top: 1.4rem;
+}
+
+/* larger screens */
+@media (min-width: 700px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1100px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.portfolio-card {
+  background: var(--card-bg, #fff);
+  border-radius: 16px;
+  padding: 0;
+  box-shadow: 0 8px 24px rgba(15,25,40,0.06);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+/* link fills the card */
+.portfolio-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+}
+
+/* image styling */
+.portfolio-card img {
+  display: block;
+  width: 100%;
+  height: 200px;         /* card thumbnail height */
+  object-fit: cover;     /* image fills area, keeps aspect */
+}
+
+/* title area */
+.portfolio-card h4 {
+  margin: 1.1rem;
+  text-align: center;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-heading);
+}
+
+/* smaller screens: smaller image height */
+@media (max-width: 420px) {
+  .portfolio-card img { height: 160px; }
+}
